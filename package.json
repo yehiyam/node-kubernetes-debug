@@ -1,17 +1,48 @@
 {
-  "name": "node-kubernetes-debug",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@kubernetes/client-node": "^0.6.0",
-    "kubernetes-client": "^6.1.0",
-    "ws": "^6.0.0"
-  }
+    "name": "node-kubernetes-debug",
+    "displayName": "nodejs kubernetes debug",
+    "description": "easy debugging of nodejs apps running in kubernetes pods",
+    "version": "0.0.1",
+    "publisher": "yehiyamlivneh",
+    "engines": {
+        "vscode": "^1.27.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:kubernetes.debug-pod"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "kubernetes.debug-pod",
+                "title": "Debug Nodejs pod"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.21",
+        "eslint": "^4.11.0",
+        "@types/node": "^8.10.25",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "tslib": "^1.9.3",
+        "base-64": "^0.1.0",
+        "bluebird": "^3.3.5",
+        "byline": "^5.0.0",
+        "js-yaml": "^3.5.2",
+        "jsonpath": "^1.0.0",
+        "request": "^2.72.0",
+        "shelljs": "^0.7.8 ",
+        "underscore": "^1.8.3",
+        "websocket": "^1.0.28"
+    }
 }
